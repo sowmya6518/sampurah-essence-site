@@ -1,0 +1,381 @@
+/* === Sampurah Essence – Global Theme === */
+:root {
+  --bg-body: #fdf7ef;
+  --bg-card: #ffffff;
+  --accent: #c9a04f;
+  --accent-soft: #f3e0b9;
+  --accent-dark: #8f6a25;
+  --text-main: #26221b;
+  --text-muted: #7a7063;
+  --border-soft: #efe1cc;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --shadow-soft: 0 14px 35px rgba(0, 0, 0, 0.06);
+  --shadow-subtle: 0 6px 18px rgba(0, 0, 0, 0.03);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #fffaf0 0, #fdf7ef 45%, #f8f1e7 100%);
+  color: var(--text-main);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+/* Sections */
+section { padding: 4rem 0; }
+#home { padding-top: 6rem; }
+#contact { padding-bottom: 6rem; }
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(253, 247, 239, 0.96);
+  border-bottom: 1px solid rgba(201, 160, 79, 0.2);
+  backdrop-filter: blur(10px);
+}
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  align-items: center;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff9e6;
+  overflow: hidden;
+}
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.brand-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: "Playfair Display", serif;
+  color: var(--accent-dark);
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  font-size: 0.9rem;
+  position: relative;
+}
+.nav-links a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  transition: 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+
+/* HERO */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.hero-title {
+  font-size: 2.6rem;
+  font-weight: 600;
+  font-family: "Playfair Display", serif;
+}
+.hero-title span { color: var(--accent-dark); }
+.hero-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+.hero-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 5px 18px rgba(201, 160, 79, 0.45);
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201, 160, 79, 0.55);
+}
+
+/* CATEGORIES */
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.3rem;
+}
+.category-card {
+  background: var(--bg-card);
+  padding: 1.2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--border-soft);
+}
+.category-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+.category-chip-wrap { margin-top: 0.4rem; }
+.category-chip {
+  background: #fff4d5;
+  border: 1px solid var(--accent);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin: 0.2rem;
+  display: inline-block;
+}
+
+/* PRODUCT CARDS */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.3rem;
+}
+.product-card {
+  padding: 1rem;
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--border-soft);
+  font-size: 0.86rem;
+}
+.product-tag {
+  color: var(--accent-dark);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.product-title {
+  font-weight: 600;
+  margin: 0.3rem 0;
+}
+
+/* STORY / WHY SAMPURAH ESSENCE */
+.story-section {
+  position: relative;
+  padding: 4rem 0;
+  background-size: cover;
+  background-position: center;
+  color: var(--accent-dark);
+}
+.story-section .section-heading p { color: #503202; }
+
+.story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: stretch;
+}
+
+/* LEFT COLUMN CARD (dark glass) */
+.story-left {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+  padding: 1.2rem 1.1rem;
+  border: 1px solid rgba(243, 209, 139, 0.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.story-highlight {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.story-highlight strong {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-weight: 600;
+}
+.story-list {
+  list-style: none;
+  display: grid;
+  gap: 0.8rem;
+  font-size: 0.88rem;
+}
+.story-list li {
+  display: flex;
+  gap: 0.6rem;
+}
+.story-bullet-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  margin-top: 0.35rem;
+  border: 2px solid #f3d18b;
+}
+.story-stamp {
+  background: rgba(255, 249, 236, 0.12);
+  border-radius: 12px;
+  padding: 0.8rem 0.9rem;
+  border: 1px dashed rgba(243, 209, 139, 0.7);
+  font-size: 0.8rem;
+}
+
+/* RIGHT COLUMN CARD (light box) */
+.story-card {
+  background: rgba(255, 250, 239, 0.97);
+  border-radius: 18px;
+  padding: 1.3rem 1.1rem;
+  color: #2b2416;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(243, 209, 139, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.story-card-title {
+  font-weight: 600;
+  font-size: 0.96rem;
+  margin-bottom: 0.4rem;
+}
+.story-card-block + .story-card-block {
+  border-top: 1px dashed rgba(222, 191, 123, 0.6);
+  padding-top: 0.9rem;
+}
+.story-points {
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: #564832;
+}
+
+/* CONTACT (basic) */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+}
+.contact-card {
+  padding: 1.2rem;
+  background: #fff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-subtle);
+  font-size: 0.86rem;
+}
+.contact-row {
+  margin-bottom: 0.8rem;
+}
+.contact-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+}
+.contact-value {
+  font-size: 0.9rem;
+}
+.contact-form {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  font-size: 0.8rem;
+}
+.field-group input,
+.field-group textarea {
+  border-radius: 10px;
+  border: 1px solid #e3d4b4;
+  padding: 0.6rem 0.65rem;
+  font-family: inherit;
+  font-size: 0.86rem;
+  background: #fffdf8;
+  outline: none;
+}
+.field-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #fffaf0;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .categories-grid,
+  .cards-grid,
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 800px) {
+  .hero-grid,
+  .story-grid,
+  .categories-grid,
+  .cards-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .story-card {
+    max-width: 480px;
+    margin-inline: auto;
+  }
+}
+@media (max-width: 576px) {
+  section { padding: 3.2rem 0; }
+  .hero-title { font-size: 2.1rem; }
+}
